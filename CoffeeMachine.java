@@ -2,54 +2,54 @@ package machine;
 
 import java.util.Scanner;
 
-enum Status{
-    BUY, FILL, TAKE, REMAINING, EXIT
-}
-
-enum Coffee{
-    ESPRESSO(250, 0, 16, 1, 4), LATTE(350, 75, 20, 1, 7), CAPUCCINO(200, 100, 12, 1, 6);
-    
-    int water;
-    int milk;
-    int coffeeBeans;
-    int disposableCups;
-    int money;
-    
-    Coffee(int a, int b, int c, int d, int e) {
-        water = a;
-        milk = b;
-        coffeeBeans = c;
-        disposableCups = d;
-        money = e;
-    }
-    
-    int getWater(){
-        return water;
-    }
-    
-    int getMilk(){
-        return milk;
-    }
-    
-    int getCoffeeBeans(){
-        return coffeeBeans;
-    }
-    
-    int getDisposableCups(){
-        return disposableCups;
-    }
-    
-    int getMoney(){
-        return money;
-    }
-}
-
 class CoffeeMachine2021 {
     int water;
     int milk;
     int coffeeBeans;
     int disposableCups;
     int money;
+
+    enum Status{
+        BUY, FILL, TAKE, REMAINING, EXIT
+    }
+    
+    enum Coffee{
+        ESPRESSO(250, 0, 16, 1, 4), LATTE(350, 75, 20, 1, 7), CAPUCCINO(200, 100, 12, 1, 6);
+        
+        int water;
+        int milk;
+        int coffeeBeans;
+        int disposableCups;
+        int money;
+        
+        Coffee(int a, int b, int c, int d, int e) {
+            water = a;
+            milk = b;
+            coffeeBeans = c;
+            disposableCups = d;
+            money = e;
+        }
+        
+        int getWater(){
+            return water;
+        }
+        
+        int getMilk(){
+            return milk;
+        }
+        
+        int getCoffeeBeans(){
+            return coffeeBeans;
+        }
+        
+        int getDisposableCups(){
+            return disposableCups;
+        }
+        
+        int getMoney(){
+            return money;
+        }
+    }
     
     public CoffeeMachine2021 (int water, int milk, int coffeeBeans, int disposableCups, int money){
         this.water =  water;
@@ -65,7 +65,7 @@ class CoffeeMachine2021 {
         
             Scanner scanner = new Scanner(System.in);
             Status command = Status.valueOf(scanner.next().toUpperCase());
-            
+
             switch (command) {
                 case BUY:
                     buy();
@@ -99,20 +99,25 @@ class CoffeeMachine2021 {
         String input = scanner.next();
         int index;
         
-        if (input.equals("back")){
-            return;    
-        } else {
-            index = Integer.parseInt(input);
+        try {
+            if (input.equals("back")){
+                return;
+            } else {
+                index = Integer.parseInt(input);
+            }
+        }
+          catch(Exception e) {
+            System.out.println("Invalid input! Choose from above next time.\n");
+            return;
         }
         
         if (index < 1 || index > 3){
-            System.out.println("Wrong input number. You can choose between 1 and 3.");
+            System.out.println("Invalid input! You can choose between 1 and 3.\n");
         } else {
-            index = Integer.parseInt(input);
             Coffee asked = Coffee.values()[index - 1];
         
             if (water >= asked.getWater() && milk >= asked.getMilk() && coffeeBeans >= asked.getCoffeeBeans() && disposableCups >= asked.getDisposableCups()) {
-                System.out.println("I have enough resources, making you a coffee!\n");
+                System.out.println("\nI have enough resources, making you a coffee!\n");
                 water -= asked.getWater();
                 milk -= asked.getMilk();
                 coffeeBeans -= asked.getCoffeeBeans();
@@ -138,9 +143,9 @@ class CoffeeMachine2021 {
         int plusMilk = scanner.nextInt();
         System.out.println("Write how many grams of coffee beans do you want to add: ");
         int plusBeans = scanner.nextInt();
-        System.out.print("Write how many disposable cups of coffee do you want to add");
+        System.out.println("Write how many disposable cups of coffee do you want to add: ");
         int plusCups = scanner.nextInt();
-        System.out.println("\n");
+        System.out.println();
         
         water += plusWater;
         milk += plusMilk;
