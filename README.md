@@ -10,7 +10,7 @@ The coffee-machine project aims to provide a program which simulates the basic o
 
 ## Installation and Running
 - Installation<br/>
-You first need to clone this repository or you can download only the CoffeeMachine.java source file. After downloading the file you need to compile it. If you have jdk installed on your computer then use the `javac CoffeeMachine.java` command to compile the program.
+You first need to clone this repository. After that you need to compile the `CoffeeMachine.java` file. If you have [JDK](https://www.oracle.com/java/technologies/javase-downloads.html) installed on your computer then use the `javac CoffeeMachine.java` command to compile the program.
 
 - Running<br/>
 After compilation you can run your program using the `java CoffeeMachine.class` command.
