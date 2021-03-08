@@ -1,6 +1,7 @@
 # coffee-machine
 
-The coffee-machine project aims to provide a program which simulates the basic operation logic of a coffee machine. This project was made for personal practice and fun.
+The coffee-machine project aims to provide a program which simulates the basic operation logic of a coffee machine. 
+This project was made for personal practice and fun.
 
 ## Table of Contents
 - [Installation and Running](#installation-and-running)
