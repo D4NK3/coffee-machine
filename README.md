@@ -1,11 +1,10 @@
 # coffee-machine
 
-The coffee-machine project aims to provide a program which simulates the basic operation logic of a coffee machine. 
-This project was made for personal practice and fun.
+The coffee-machine project aims to provide a program which simulates the basic operation logic of a coffee machine. This project is an implementation of the Coffee Machine project from the [Jetbrains Academy](https://www.jetbrains.com/academy/) (I attend their Java course). This project was made for personal practice and fun.
 
 ## Table of Contents
 - [Installation and Running](#installation-and-running)
-- [Usage](#usage)
+- [Manual](#manual)
 - [Troubleshooting](#troubleshooting)
 - [License](#license)
 
@@ -16,7 +15,7 @@ You first need to clone this repository. After that you need to compile the `Cof
 - Running<br/>
 After compilation you can run your program using the `java CoffeeMachine.class` command.
 
-## Usage
+## Manual
 As previously mentioned, this program aims to simulate the logic of a coffee machine. You can `buy`, `fill it`, `take the money` or `turn off`. The coffee machine can make 3 different coffees and each of them has different required ingredients and costs.
 
 - **Coffees** (water, milk, coffee beans, disposable cups, price): 
